@@ -4,12 +4,11 @@ import time
 
 import Adafruit_CharLCD as LCD
 
-
 # Initialize the LCD using the pins
 lcd = LCD.Adafruit_CharLCDPlate()
 
 # create some custom characters
-lcd.create_char(1, [31, 0, 10, 0, 4, 17, 14]) # lachend mannetje
+lcd.create_char(1, [0, 27, 27, 0, 4, 4, 17, 14])  # lachend mannetje
 lcd.create_char(2, [0, 1, 3, 22, 28, 8, 0, 0])
 lcd.create_char(3, [0, 14, 21, 23, 17, 14, 0, 0])
 lcd.create_char(4, [31, 17, 10, 4, 10, 17, 31, 0])
@@ -58,11 +57,11 @@ lcd.clear()
 lcd.message('Hallo Wouter\n(druk op knop)')
 
 # Make list of button value, text, and backlight color.
-buttons = ( (LCD.SELECT, 'Select', (1,1,1)),
-            (LCD.LEFT,   'Left'  , (1,0,0)),
-            (LCD.UP,     'Up'    , (0,0,1)),
-            (LCD.DOWN,   'Down'  , (0,1,0)),
-            (LCD.RIGHT,  'Right' , (1,0,1)) )
+buttons = ((LCD.SELECT, 'Select', (1, 1, 1)),
+           (LCD.LEFT, 'Left', (1, 0, 0)),
+           (LCD.UP, 'Up', (0, 0, 1)),
+           (LCD.DOWN, 'Down', (0, 1, 0)),
+           (LCD.RIGHT, 'Right', (1, 0, 1)))
 
 print('Press Ctrl-C to quit.')
 while True:
