@@ -55,7 +55,7 @@ time.sleep(3.0)
 
 # Show button state.
 lcd.clear()
-lcd.message('Hallo Wouter\n(druk op een knop)...')
+lcd.message('Hallo Wouter\n(druk op knop)')
 
 # Make list of button value, text, and backlight color.
 buttons = ( (LCD.SELECT, 'Select', (1,1,1)),
