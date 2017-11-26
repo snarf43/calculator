@@ -9,7 +9,7 @@ import Adafruit_CharLCD as LCD
 lcd = LCD.Adafruit_CharLCDPlate()
 
 # create some custom characters
-lcd.create_char(1, [2, 3, 2, 2, 14, 30, 12, 0])
+lcd.create_char(1, [31, 0, 10, 0, 4, 17, 14]) # lachend mannetje
 lcd.create_char(2, [0, 1, 3, 22, 28, 8, 0, 0])
 lcd.create_char(3, [0, 14, 21, 23, 17, 14, 0, 0])
 lcd.create_char(4, [31, 17, 10, 4, 10, 17, 31, 0])
