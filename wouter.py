@@ -74,7 +74,7 @@ signal.signal(signal.SIGALRM, handler)
 signal.alarm(5)
 
 # This open() may hang indefinitely
-while(1)
+while True:
     #nothing
 
 signal.alarm(0)          # Disable the alarm
