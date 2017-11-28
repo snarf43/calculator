@@ -3,6 +3,7 @@
 import time
 
 import Adafruit_CharLCD as LCD
+import signal, os   # interrupt/timer library
 
 # Initialize the LCD using the pins
 lcd = LCD.Adafruit_CharLCDPlate()
@@ -20,37 +21,37 @@ lcd.create_char(7, [31, 17, 21, 21, 21, 21, 17, 31])
 lcd.set_color(1.0, 0.0, 0.0)
 lcd.clear()
 lcd.message('RED \x01')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(0.0, 1.0, 0.0)
 lcd.clear()
 lcd.message('GREEN \x02')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(0.0, 0.0, 1.0)
 lcd.clear()
 lcd.message('BLUE \x03')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(1.0, 1.0, 0.0)
 lcd.clear()
 lcd.message('YELLOW \x04')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(0.0, 1.0, 1.0)
 lcd.clear()
 lcd.message('CYAN \x05')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(1.0, 0.0, 1.0)
 lcd.clear()
 lcd.message('MAGENTA \x06')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(1.0, 1.0, 1.0)
 lcd.clear()
 lcd.message('WHITE \x07')
-time.sleep(3.0)
+time.sleep(1.0)
 
 # Show button state.
 lcd.clear()
@@ -62,6 +63,20 @@ buttons = ((LCD.SELECT, 'Select', (1, 1, 1)),
            (LCD.UP, 'Up', (0, 0, 1)),
            (LCD.DOWN, 'Down', (0, 1, 0)),
            (LCD.RIGHT, 'Right', (1, 0, 1)))
+
+
+def handler(signum, frame):
+    print 'Signal handler called with signal', signum
+    raise IOError("Couldn't open device!")
+
+# Set the signal handler and a 5-second alarm
+signal.signal(signal.SIGALRM, handler)
+signal.alarm(5)
+
+# This open() may hang indefinitely
+fd = os.open('/dev/ttyS0', os.O_RDWR)
+
+signal.alarm(0)          # Disable the alarm
 
 print('Press Ctrl-C to quit.')
 while True:
