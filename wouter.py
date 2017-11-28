@@ -3,7 +3,7 @@
 import time
 
 import Adafruit_CharLCD as LCD
-import signal, os   # interrupt/timer library
+import signal   # interrupt/timer library
 
 # Initialize the LCD using the pins
 lcd = LCD.Adafruit_CharLCDPlate()
@@ -74,7 +74,8 @@ signal.signal(signal.SIGALRM, handler)
 signal.alarm(5)
 
 # This open() may hang indefinitely
-fd = os.open('/dev/ttyS0', os.O_RDWR)
+while(1)
+    #nothing
 
 signal.alarm(0)          # Disable the alarm
 
