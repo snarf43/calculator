@@ -75,7 +75,7 @@ def handler(signum, frame):
             lcd.clear()
             lcd.message(button[1])
             lcd.set_color(button[2][0], button[2][1], button[2][2])
-    signal.alarm(3) #next alarm in ... second(s)
+    signal.alarm(1) #next alarm in ... second(s)
 
 # Set the signal handler and a 1-second alarm
 signal.signal(signal.SIGALRM, handler)
