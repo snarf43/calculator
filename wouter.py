@@ -64,24 +64,10 @@ buttons = ((LCD.SELECT, 'Select', (1, 1, 1)),
            (LCD.DOWN, 'Down', (0, 1, 0)),
            (LCD.RIGHT, 'Right', (1, 0, 1)))
 
+print('Press Ctrl-C to quit.')
 
 def handler(signum, frame):
     print 'Signal handler called with signal', signum
-    raise IOError("Couldn't open device!")
-
-# Set the signal handler and a 5-second alarm
-signal.signal(signal.SIGALRM, handler)
-signal.alarm(5)
-
-# This open() may hang indefinitely
-while True:
-    print"."
-    time.sleep(1.0)
-
-signal.alarm(0)          # Disable the alarm
-
-print('Press Ctrl-C to quit.')
-while True:
     # Loop through each button and check if it is pressed.
     for button in buttons:
         if lcd.is_pressed(button[0]):
@@ -89,3 +75,16 @@ while True:
             lcd.clear()
             lcd.message(button[1])
             lcd.set_color(button[2][0], button[2][1], button[2][2])
+    signal.alarm(3) #next alarm in ... second(s)
+
+# Set the signal handler and a 1-second alarm
+signal.signal(signal.SIGALRM, handler)
+signal.alarm(1)
+
+# This open() may hang indefinitely
+while True:
+    print"."
+
+# signal.alarm(0)          # Disable the alarm
+
+
