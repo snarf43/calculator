@@ -75,7 +75,8 @@ signal.alarm(5)
 
 # This open() may hang indefinitely
 while True:
-    #nothing
+    print"."
+    time.sleep(1.0)
 
 signal.alarm(0)          # Disable the alarm
 
