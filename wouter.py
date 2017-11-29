@@ -61,7 +61,7 @@ GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 # Wait for main button press first
 waiting = True
 while (waiting):
-    input_state = GPIO.input(40)
+    input_state = GPIO.input(21)
     if input_state == False:
         print("Button pressed")
         time.sleep(0.2)
