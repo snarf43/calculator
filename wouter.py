@@ -64,6 +64,7 @@ while (waiting):
     input_state = GPIO.input(21)
     if input_state == False:
         print("Button pressed")
+	waiting = False
         time.sleep(0.2)
 
 # Show button state.
