@@ -4,6 +4,7 @@ import time
 
 import Adafruit_CharLCD as LCD
 import signal   # interrupt/timer library
+import RPi.GPIO as GPIO
 
 # Initialize the LCD using the pins
 lcd = LCD.Adafruit_CharLCDPlate()
