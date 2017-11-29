@@ -59,7 +59,7 @@ GPIO.setmode(GPIO.BCM) #Use Broadcom SOC channel number (pin 40 == GPIO21), no c
 GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 # Wait for main button press first
-waiting = true
+waiting = True
 while (waiting):
     input_state = GPIO.input(40)
     if input_state == False:
