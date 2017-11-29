@@ -55,8 +55,8 @@ lcd.message('WHITE \x07')
 time.sleep(1.0)
 
 # Configure main button
-GPIO.setmode(GPIO.BOARD) #Use board numbers (1-40)
-GPIO.setup(40, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setmode(GPIO.BCM) #Use Broadcom SOC channel number (pin 40 == GPIO21), no choice as Adafruit uses this mode...
+GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 # Wait for main button press first
 waiting = true
