@@ -54,18 +54,14 @@ lcd.clear()
 lcd.message('WHITE \x07')
 time.sleep(1.0)
 
+# Define main button handler (interrupt callback function)
+def my_callback(channel):
+    print("Button pressed")
+
 # Configure main button
 GPIO.setmode(GPIO.BCM) #Use Broadcom SOC channel number (pin 40 == GPIO21), no choice as Adafruit uses this mode...
 GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
-# Wait for main button press first
-waiting = True
-while (waiting):
-    input_state = GPIO.input(21)
-    if input_state == False:
-        print("Button pressed")
-	waiting = False
-        time.sleep(0.2)
+GPIO.add_event_detect(21, GPIO.FALLING, callback=my_callback)
 
 # Show button state.
 lcd.clear()
