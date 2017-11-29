@@ -54,6 +54,18 @@ lcd.clear()
 lcd.message('WHITE \x07')
 time.sleep(1.0)
 
+# Configure main button
+GPIO.setmode(GPIO.BOARD) #Use board numbers (1-40)
+GPIO.setup(40, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+# Wait for main button press first
+waiting = true
+while (waiting):
+    input_state = GPIO.input(40)
+    if input_state == False:
+        print("Button pressed")
+        time.sleep(0.2)
+
 # Show button state.
 lcd.clear()
 lcd.message('Hallo Wouter\n(druk op knop)')
