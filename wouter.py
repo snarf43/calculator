@@ -82,9 +82,12 @@ signal.signal(signal.SIGALRM, handler)
 signal.alarm(1)
 
 # This open() may hang indefinitely
-while True:
-    print"."
+try:
+    while True:
+        print"."
 
-# signal.alarm(0)          # Disable the alarm
+    # signal.alarm(0)          # Disable the alarm
 
-
+finally:
+    print("Resetting all GPIO to input to prevent dangers when changing hardware.")
+    GPIO.cleanup()
