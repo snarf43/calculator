@@ -63,7 +63,7 @@ triggered16 = False
 def my_callback(channel):
     global triggered16  # Make sure Python knows we want to use the global, not the local variable
     global totalgoals
-#    print(channel)
+    print(channel)
     if channel == 16:
         triggered16 = True
     elif (channel == 20 or channel == 21) and triggered16:
