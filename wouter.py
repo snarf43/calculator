@@ -56,7 +56,7 @@ time.sleep(0.1)
 
 # Define main button handler (interrupt callback function)
 def my_callback(channel):
-    print("Button pressed", channel)
+    print(channel)
 
 # Configure main button
 GPIO.setmode(GPIO.BCM) #Use Broadcom SOC Channel number (pin 40 == GPIO21), no choice as Adafruit uses this mode...
@@ -80,28 +80,24 @@ buttons = ((LCD.SELECT, 'Select', (1, 1, 1)),
 
 print('Press Ctrl-C to quit.')
 
-def handler(signum, frame):
-    print 'Signal handler called with signal', signum
-    # Loop through each button and check if it is pressed.
-    for button in buttons:
-        if lcd.is_pressed(button[0]):
-            # Button is pressed, change the message and backlight.
-            lcd.clear()
-            lcd.message(button[1])
-            lcd.set_color(button[2][0], button[2][1], button[2][2])
-    signal.alarm(1) #next alarm in ... second(s)
 
-# Set the signal handler and a 1-second alarm
-signal.signal(signal.SIGALRM, handler)
-signal.alarm(1)
+# Loop through each button and check if it is pressed (for use in specific code later)
+for button in buttons:
+    if lcd.is_pressed(button[0]):
+        # Button is pressed, change the message and backlight.
+        lcd.clear()
+        lcd.message(button[1])
+        lcd.set_color(button[2][0], button[2][1], button[2][2])
+
+
 
 # This open() may hang indefinitely
-try:
-    while True:
-        print"."
-        time.sleep(5)
-
-    # signal.alarm(0)          # Disable the alarm
+#try:
+#    while True:
+#        print"."
+#        time.sleep(5)
+#
+#    signal.alarm(0)          # Disable the alarm
 
 finally:
     print("Resetting all GPIO to input to prevent dangers when changing hardware.")
