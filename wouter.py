@@ -54,9 +54,20 @@ import RPi.GPIO as GPIO
 #lcd.message('WHITE \x07')
 #time.sleep(0.1)
 
-# Define main button handler (interrupt callback function)
+totalgoals = 0
+
+# we define goal as an indication from sensor 16 followed by one of at least 20 or 21
+triggered16 = False
+
+# Define interrupt callback function
 def my_callback(channel):
-    print(channel)
+#    print(channel)
+    if channel == 16:
+        triggered16 = True
+    if (channel == 20 or channel == 21) and triggered16:
+        totalgoal = totalgoals + 1
+        triggered16 = False
+    print(totalgoals)
 
 # Configure main button
 GPIO.setmode(GPIO.BCM) #Use Broadcom SOC Channel number (pin 40 == GPIO21), no choice as Adafruit uses this mode...
@@ -91,7 +102,7 @@ try:
 #                lcd.message(button[1])
 #               lcd.set_color(button[2][0], button[2][1], button[2][2])
         print("in loop")
-        time.sleep(10)
+        time.sleep(1000)
 
 
 # This open() may hang indefinitely
