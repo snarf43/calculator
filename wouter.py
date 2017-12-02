@@ -73,7 +73,7 @@ def my_callback(channel):
         f = open('/var/www/html/index.html', 'w')
 
         message = """<html>
-        <head></head>
+        <head><title>score</title><meta http-equiv=”refresh” content=”5" /></head>
         <body><p>"""
         message = message + str(totalgoals)
         message = message + """
