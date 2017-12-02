@@ -22,37 +22,37 @@ lcd.create_char(7, [31, 17, 21, 21, 21, 21, 17, 31])
 lcd.set_color(1.0, 0.0, 0.0)
 lcd.clear()
 lcd.message('RED \x01')
-time.sleep(1.0)
+time.sleep(0.1)
 
 lcd.set_color(0.0, 1.0, 0.0)
 lcd.clear()
 lcd.message('GREEN \x02')
-time.sleep(1.0)
+time.sleep(0.1)
 
 lcd.set_color(0.0, 0.0, 1.0)
 lcd.clear()
 lcd.message('BLUE \x03')
-time.sleep(1.0)
+time.sleep(0.1)
 
 lcd.set_color(1.0, 1.0, 0.0)
 lcd.clear()
 lcd.message('YELLOW \x04')
-time.sleep(1.0)
+time.sleep(0.1)
 
 lcd.set_color(0.0, 1.0, 1.0)
 lcd.clear()
 lcd.message('CYAN \x05')
-time.sleep(1.0)
+time.sleep(0.1)
 
 lcd.set_color(1.0, 0.0, 1.0)
 lcd.clear()
 lcd.message('MAGENTA \x06')
-time.sleep(1.0)
+time.sleep(0.1)
 
 lcd.set_color(1.0, 1.0, 1.0)
 lcd.clear()
 lcd.message('WHITE \x07')
-time.sleep(1.0)
+time.sleep(0.1)
 
 # Define main button handler (interrupt callback function)
 def my_callback(channel):
@@ -99,6 +99,7 @@ signal.alarm(1)
 try:
     while True:
         print"."
+        time.sleep(5)
 
     # signal.alarm(0)          # Disable the alarm
 
