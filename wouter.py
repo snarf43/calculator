@@ -68,8 +68,8 @@ GPIO.add_event_detect(20, GPIO.FALLING, callback=my_callback)
 GPIO.add_event_detect(21, GPIO.FALLING, callback=my_callback)
 
 # Show button state.
-lcd.clear()
-lcd.message('Hallo Wouter\n(druk op knop)')
+#lcd.clear()
+#lcd.message('Hallo Wouter\n(druk op knop)')
 
 # Make list of button value, text, and backlight color.
 #buttons = ((LCD.SELECT, 'Select', (1, 1, 1)),
