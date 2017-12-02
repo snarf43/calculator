@@ -82,17 +82,19 @@ print('Press Ctrl-C to quit.')
 
 
 # Loop through each button and check if it is pressed (for use in specific code later)
-for button in buttons:
-    if lcd.is_pressed(button[0]):
-        # Button is pressed, change the message and backlight.
-        lcd.clear()
-        lcd.message(button[1])
-        lcd.set_color(button[2][0], button[2][1], button[2][2])
+try:
+    while(True):
+        for button in buttons:
+            if lcd.is_pressed(button[0]):
+            # Button is pressed, change the message and backlight.
+                lcd.clear()
+                lcd.message(button[1])
+                lcd.set_color(button[2][0], button[2][1], button[2][2])
 
 
 
 # This open() may hang indefinitely
-#try:
+
 #    while True:
 #        print"."
 #        time.sleep(5)
