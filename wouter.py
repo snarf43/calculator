@@ -70,7 +70,7 @@ def my_callback(channel):
         totalgoals = totalgoals + 1
         triggered16 = False
 
-        f = open('/var/www/html/index2.html', 'w')
+        f = open('/var/www/html/index.html', 'w')
 
         message = """<html>
         <head></head>
