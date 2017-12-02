@@ -75,8 +75,8 @@ def my_callback(channel):
         message = """<html>
         <head><title>score</title><meta http-equiv="refresh" content="5"/></head>
         <body><h1>"""
-        message = message + """SCORE: """ + str(totalgoals)
-        message = message + """
+        message = message + """<font size="3" color="red">This is some text!SCORE: """ + str(totalgoals)
+        message = message + """</font>
         </h1></body>
         </html>"""
 
