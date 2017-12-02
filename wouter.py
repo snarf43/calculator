@@ -62,15 +62,14 @@ triggered16 = False
 # Define interrupt callback function
 def my_callback(channel):
     global triggered16  # Make sure Python knows we want to use the global, not the local variable
-    global totalgoals   
+    global totalgoals
 #    print(channel)
     if channel == 16:
         triggered16 = True
     elif (channel == 20 or channel == 21) and triggered16:
         totalgoals = totalgoals + 1
         triggered16 = False
-
-    print(totalgoals)
+        print(totalgoals)
 
 # Configure main button
 GPIO.setmode(GPIO.BCM) #Use Broadcom SOC Channel number (pin 40 == GPIO21), no choice as Adafruit uses this mode...
