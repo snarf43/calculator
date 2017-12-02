@@ -74,10 +74,10 @@ def my_callback(channel):
 
         message = """<html>
         <head><title>score</title><meta http-equiv="refresh" content="5"/></head>
-        <body><p>"""
-        message = message + str(totalgoals)
+        <body><h1>"""
+        message = message + """AANTAL DOELPUNTEN: """ + str(totalgoals)
         message = message + """
-        </p></body>
+        </h1></body>
         </html>"""
 
         f.write(message)
