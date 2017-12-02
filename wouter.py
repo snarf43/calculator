@@ -75,7 +75,7 @@ def my_callback(channel):
         message = """<html>
         <head></head>
         <body><p>"""
-        message = message + totalgoals
+        message = message + str(totalgoals)
         message = message + """
         </p></body>
         </html>"""
