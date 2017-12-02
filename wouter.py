@@ -91,6 +91,7 @@ try:
 #                lcd.message(button[1])
 #               lcd.set_color(button[2][0], button[2][1], button[2][2])
         print("in loop")
+        time.sleep(10)
 
 
 # This open() may hang indefinitely
