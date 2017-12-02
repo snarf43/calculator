@@ -69,7 +69,19 @@ def my_callback(channel):
     elif (channel == 20 or channel == 21) and triggered16:
         totalgoals = totalgoals + 1
         triggered16 = False
-        print(totalgoals)
+
+        f = open('index.html', 'w')
+
+        message = """<html>
+        <head></head>
+        <body><p>"""
+        message = message + totalgoals
+        message = message + """
+        </p></body>
+        </html>"""
+
+        f.write(message)
+        f.close()
 
 # Configure main button
 GPIO.setmode(GPIO.BCM) #Use Broadcom SOC Channel number (pin 40 == GPIO21), no choice as Adafruit uses this mode...
