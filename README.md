@@ -16,3 +16,6 @@ prerequisites (and useful stuff):
 
 Use as a webserver & access point
 - See: http://www.instructables.com/id/Raspberry-Pi-Web-Server-Wireless-Access-Point-WAP/
+
+Make this a low power setup (see: https://www.jeffgeerling.com/blogs/jeff-geerling/raspberry-pi-zero-conserve-energy):
+- Disable HDMIO: running /usr/bin/tvservice -o (-p to re-enable). Add the line to /etc/rc.local to disable HDMI on boot.
