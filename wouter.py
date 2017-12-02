@@ -60,7 +60,7 @@ def my_callback(channel):
 
 # Configure main button
 GPIO.setmode(GPIO.BCM) #Use Broadcom SOC Channel number (pin 40 == GPIO21), no choice as Adafruit uses this mode...
-GPIO.setup(26, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(20, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.add_event_detect(16, GPIO.FALLING, callback=my_callback)
