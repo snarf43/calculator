@@ -12,3 +12,7 @@ prerequisites (and useful stuff):
 
 3. Install demo code (that we refer to):
 - https://github.com/adafruit/Adafruit_Python_CharLCD 
+
+
+Use as a webserver & access point
+- See: http://www.instructables.com/id/Raspberry-Pi-Web-Server-Wireless-Access-Point-WAP/
