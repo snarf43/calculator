@@ -62,7 +62,7 @@ f = open('/var/www/html/index.html', 'w')
 message = """<html>
        <head><title>score</title><meta http-equiv="refresh" content="2"/></head>
        <body><h1>"""
-message = message + """<font size="120" color="red">GOALS: 0"""</font>
+message = message + """<font size="120" color="red">GOALS: 0</font>
        </h1></body>
        </html>"""
 
