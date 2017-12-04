@@ -54,7 +54,20 @@ import RPi.GPIO as GPIO
 #lcd.message('WHITE \x07')
 #time.sleep(0.1)
 
+# Start with 0 goals
 totalgoals = 0
+
+f = open('/var/www/html/index.html', 'w')
+
+message = """<html>
+       <head><title>score</title><meta http-equiv="refresh" content="2"/></head>
+       <body><h1>"""
+message = message + """<font size="120" color="red">GOALS: 0"""</font>
+       </h1></body>
+       </html>"""
+
+f.write(message)
+f.close()
 
 # we define goal as an indication from sensor 16 followed by one of at least 20 or 21
 triggered16 = False
